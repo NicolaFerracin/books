@@ -1,7 +1,8 @@
-app.controller('IndexController', ['$scope', '$http', 'User', '$window', function($scope, $http, User, $window) {
+app.controller('IndexController', ['$scope',  '$http', 'User', '$window', function($scope,  $http, User, $window) {
 
   // User is the global obj we use to check the user login status
   $scope.user = User;
+
 
   // check if user is loggedin
   $http.get("/loggedin")

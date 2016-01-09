@@ -4,5 +4,5 @@ var mongoose = require('mongoose');
 var thingInsideThing = {
 };
 
-module.exports = mongoose.model('Thing', {
+module.exports = mongoose.model('Book', {
 });

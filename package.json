@@ -1,24 +1,26 @@
 {
-  "name"         : "Boilerplate",
-  "version"      : "0.0.0",
-  "description"  : "This is a basic boilerplate for a Single Page Application.",
-  "main"         : "server.js",
-  "author"       : "NicolaFerracin",
-  "dependencies" : {
-    "passport" : "latest",
-    "passport-local" : "latest",
-    "express"         : "latest",
-    "mongoose"        : "latest",
-    "morgan"          : "latest",
-    "body-parser"     : "latest",
-    "method-override" : "latest",
-    "connect-flash" : "latest",
-    "bcrypt-nodejs" : "latest",
+  "name": "Manage a Book Trading Club",
+  "version": "0.0.0",
+  "description": "FCC Basejump.",
+  "main": "server.js",
+  "author": "NicolaFerracin",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "latest",
+    "connect-flash": "latest",
+    "consolidate": "^0.13.1",
+    "cookie-parser": "latest",
+    "express": "latest",
     "express-session": "latest",
-    "cookie-parser": "latest"
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "mustache": "^2.2.1",
+    "passport": "latest",
+    "passport-local": "latest"
   },
   "engines": {
-    "npm" : "latest"
+    "npm": "latest"
   },
   "scripts": {
     "start": "node server.js"

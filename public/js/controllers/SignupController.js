@@ -1,5 +1,6 @@
-app.controller('SignupController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+app.controller('SignupController', ['$scope', '$http', '$window', 'User', function($scope, $http, $window, User) {
 
+  console.log(User);
   // booleans to show/hide alerts
   $scope.submitted = false;
   $scope.showPasswordAlert = false;
