@@ -1,11 +1,6 @@
 // angular routing
 var app = angular.module('BooksApp', ['ngRoute']);
 
-// User global object to check loggedin status anywhere in the app
-app.service('User', function () {
-  return {};
-})
-
 // route provider to redirect the user to the requested view, using a single page application setup
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
@@ -36,21 +31,22 @@ app.config(function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 });
 
-app.run(function($rootScope, $location, $http, User) {
+app.run(function($rootScope, $location, $http) {
   $rootScope.$on("$routeChangeStart", function(event, next, current) {
     var privateViews = ["views/settings.html", "views/myBooks.html"];
+    // check if user is loggedin
+    $http.get("/loggedin")
+    .success(function (data) {
+      window.localStorage.setItem('user', JSON.stringify(data));
+    })
+    .error(function (err) {
+      console.log('Error: ' + err);
+    });
+
     if (privateViews.indexOf(next.templateUrl) > -1) {
-      // check if user is loggedin
-      $http.get("/loggedin")
-      .success(function (data) {
-        User = data;
-        if (!data.isLoggedIn) {
-          $location.path("/login");
-        }
-      })
-      .error(function (err) {
-        console.log('Error: ' + err);
-      });
+      if (!data.local.email) {
+        $location.path("/login");
+      }
     }
   });
 });

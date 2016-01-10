@@ -1,31 +1,15 @@
-app.controller('IndexController', ['$scope',  '$http', 'User', '$window', function($scope,  $http, User, $window) {
+app.controller('IndexController', ['$scope',  '$http', '$rootScope', '$window', function($scope,  $http, $rootScope, $window) {
 
   // User is the global obj we use to check the user login status
-  $scope.user = User;
-
-
-  // check if user is loggedin
-  $http.get("/loggedin")
-  .success(function (data) {
-    if (data.isLoggedIn) {
-      // if user is logged in update the global obj
-      User.isLoggedIn = data.isLoggedIn;
-      User.email = data.email;
-      // create a local copy of the global obj for local access
-      $scope.user = User;
-    }
-  })
-  .error(function (err) {
-    console.log('Error: ' + err);
-  });
+  $scope.user = JSON.parse(window.localStorage.user);
 
   $scope.logout = function() {
     // user is logging out
     $http.get("/logout");
     // update global object
-    User.isLoggedIn = false;
-    User.email = undefined;
+    window.localStorage.removeItem('user');
     // update local copy of the global obj
-    $scope.user = User;
+    $scope.user = window.localStorage.user;
+    console.log($scope.user)
   }
 }]);

@@ -141,11 +141,9 @@ app.get('/logout', function(req, res) {
 isLoggedIn = function(req) {
 	var user = {};
 	if (req.isAuthenticated()) {
-		user.isLoggedIn = true;
-		user.email = req.user.local.email;
-	} else {
-		user.isLoggedIn = false;
-		user.email = undefined;
+		var user = JSON.parse(JSON.stringify(req.user));
+		// hide sensible information
+		delete user.local.password;
 	}
 	return user;
 }
