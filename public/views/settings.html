@@ -1,11 +1,30 @@
-<div class="row">
+<div class="row" class="white">
   <div class="col-xs-6 col-xs-offset-3">
     <div class="page-header">
-      <h1>Settings</h1>
+      <h1 class="white">Settings</h1>
     </div>
-    <h2>{{user.city}}</h2>
-    <h2>{{user.state}}</h2>
-    <h2>{{user.fullName}}</h2>
-    <!-- TODO After authentication I can update my settings to store my full name, city, and state. -->
+    <div class="white">
+      <p class="bigFont">Full name: <span ng-hide="showChangeName">{{user.fullName}}</span>
+      <a href="#" ng-click="showChangeName = true; showChangeCity = false; showChangeState = false" ng-hide="showChangeName" class="border bg-white black float-right">Change name</a>
+        <form name="changeName" ng-submit="save('name', fullName)" ng-show="showChangeName">
+          <input type="text" class="form-control" name="fullName" placeholder="New name" ng-model="fullName" required>
+          <a href="#" ng-disabled="changeName.$invalid" class="border green" type="submit">Save</a>
+        </form>
+      </p>
+      <p>City: <span ng-hide="showChangeCity">{{user.city}}</span>
+      <a href="#" ng-click="showChangeCity = true; showChangeName = false; showChangeState = false" ng-hide="showChangeCity" class="border blue float-right">Change city</a>
+        <form name="changeCity" ng-submit="save('city', city)" ng-show="showChangeCity">
+          <input type="text" class="form-control" name="city" placeholder="New city" ng-model="city" required>
+          <a href="#" ng-disabled="changeCity.$invalid" class="border green" type="submit">Save</a>
+        </form>
+      </p>
+      <p>State: <span ng-hide="showChangeState">{{user.state}}</span>
+      <a href="#" ng-click="showChangeState = true; showChangeName = false; showChangeCity = false" ng-hide="showChangeState" class="border blue float-right">Change state</a>
+        <form name="changeState" ng-submit="save('state', state)" ng-show="showChangeState">
+          <input type="text" class="form-control" name="state" placeholder="New state" ng-model="state" required>
+          <a href="#" ng-disabled="changeState.$invalid" class="border green" type="submit">Save</a>
+        </form>
+      </p>
+    </div>
   </div>
 </div>

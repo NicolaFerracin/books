@@ -138,6 +138,32 @@ app.get('/logout', function(req, res) {
 	res.redirect('/');
 });
 
+// update a user entry when city, state or fullName changes
+app.post('/api/user/:id', function(req, res) {
+	User.findOne({ '_id' :  req.params.id }, function(err, user) {
+		if (err) {
+			res.send(err);
+		} else {
+			user.fullName = req.body.fullName;
+			user.city = req.body.city;
+			user.state = req.body.state;
+			user.save(function(err) {
+				if (err) {
+					return next(err)
+				} else {
+					req.login(user, function(err) {
+						if (err) {
+							return next(err)
+						} else {
+							res.sendStatus(200)
+						}
+					})
+				}
+			});
+		}
+	});
+});
+
 isLoggedIn = function(req) {
 	var user;
 	if (req.isAuthenticated()) {

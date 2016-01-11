@@ -1,24 +1,3 @@
-<!--
-<header class="hero-unit" id="banner">
-<div class="container home">
-<h1>Starter Boilerplate</h1>
-<p>Build your MEAN application today!</p>
-<h2>How to make it yours</h2>
-<ol class="center">
-<li>Install MongoDB, Express, Node.js and git on your machine</li>
-<li>Open git shell or git bash</li>
-<li>Run "git clone https://github.com/NicolaFerracin/starter-boilerplate"</li>
-<li>Start mongodb by typing "mongod" in the command line</li>
-<li>Open another command line, navigate inside the main app folder and type "node server.js"</li>
-<li>Wait to see the following in you command line "App listening on port 8080"</li>
-<li>Open your browser and go <a href="http://localhost:8080">here</a> to see it live</li>
-<li>Edit the files, save, restart the server and make it yours!</li>
-</ol>
-</div>
-</header>
--->
-
-
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
     <div class="header">
@@ -29,15 +8,20 @@
         <span class="border"><a href="/signup">&nbsp;Signup </a></span>
         <span>&nbsp;and browse our 17.123 books NOW!</span>
       </div>
-      <div id="loggedInHome" ng-show="user.local.email" class="bigFont white">
-
+      <div id="loggedInHome" ng-show="user.local.email">
+        <div class="bigFont white">
           <p>Browse through all the books in the database</p>
-          <p>Add books to your accoount</p>
+          <p>Add books to your account</p>
           <p>Find a book you want to read and request a trade</p>
           <p>Offer your books and accept trades requests</p>
-
+        </div>
+        <div align="center">
+          <a href="#" ng-click="showBooks()"><img height="" width="400" src="img/arrow_down.png" /></a>
+        </div>
+      </div>
+      <div id="books" class="bigFont white" ng-show="toggleBooks">
+        <p>ajbnvjranjbvnañnmc</p>
       </div>
     </div>
-    <!-- TODO After authentication I can update my settings to store my full name, city, and state. -->
   </div>
 </div>
