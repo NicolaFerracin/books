@@ -3,6 +3,5 @@ app.controller('SettingsController', ['$scope', '$http', '$window', '$rootScope'
 
   $scope.user = JSON.parse(window.localStorage.user);
 
-  console.log($scope.user)
 
 }]);

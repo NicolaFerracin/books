@@ -1,38 +1,59 @@
 /* nav bar */
-.logo {
-  font-size: 200%;
+.navbar-default {
+  margin-top: 10px;
+  background: none;
+  border: none;
 }
 
-/* home view */
-.center {
-  text-align: center;
-  list-style-position:inside;
-}
-
-.home {
+.border {
+  border: 3px solid;
+  color: white !important;
   font-size: 150%;
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
+.view a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-#banner h1 {
-  font-size: 100px;
-  line-height: 1;
-  letter-spacing: -1px;
+.view a:hover {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-#banner p {
-  font-size: 20px;
+.view a:visited {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #FF6600;
+/* body */
+body {
+  background-image: './img/bg.jpg';
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+body:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.header h1 {
+  font-size: 500%;
+  margin: 50px 0 50px 0;
+}
+
+.bigFont {
+  font-size: 250%;
+}
+
+.white {
+  color: white;
 }

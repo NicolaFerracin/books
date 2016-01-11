@@ -18,7 +18,7 @@
 	<!-- Include the AngularJS routing library -->
 	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 </head>
-<body ng-app="BooksApp" ng-controller="IndexController">
+<body ng-app="BooksApp" ng-controller="IndexController" background="img/bg.jpg">
 	<!-- navigator and footer and ng-view in the middle -->
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -29,13 +29,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Books</a>
 			</div>
 
 			<!-- Collect the nav links, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
-					<li class="ng-hide" ng-show="user.local.email"><a href="myBooks">My Books</a></li>
+					<li class="ng-hide" ng-show="user.local.email"><a class="border" href="myBooks">My Books</a></li>
 				</ul>
 				<!-- right navbar login and signup and logout -->
 				<ul class="nav navbar-nav navbar-right">
@@ -58,7 +57,7 @@
 	<!-- footer -->
 	<div class="navbar navbar-default navbar-fixed-bottom nav-center">
 		<div class="container nav nav-center">
-			<ul class="footer navbar-text nav nav-center">©2015 - The Starter Boilerplate is built by <a target="_new" href="https://github.com/NicolaFerracin">Nicola Ferracin</a></ul>
+			<ul class="footer navbar-text nav nav-center white">©2015 - Books is built by Nicola Ferracin</ul>
 		</div>
 	</div>
 

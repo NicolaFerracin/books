@@ -139,7 +139,7 @@ app.get('/logout', function(req, res) {
 });
 
 isLoggedIn = function(req) {
-	var user = {};
+	var user;
 	if (req.isAuthenticated()) {
 		var user = JSON.parse(JSON.stringify(req.user));
 		// hide sensible information
