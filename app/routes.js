@@ -3,27 +3,30 @@ var User = require('./models/user');  // load the User mongoose model for passpo
 
 module.exports = function(app, passport) {
 
-	/*
+
 	// api ---------------------------------------------------------------------
 	// create book
 	app.post('/api/books', function(req, res) {
-	Book.create({
-	// TODO populate the obj
-}, function(err, book) {
-if (err) {
-res.send(err);
-}
-res.json(book);
-});
-});
+		// check if the books exists in DB
+			// update
+		Book.create({
+			// TODO populate the obj
+		}, function(err, book) {
+			if (err) {
+				res.send(err);
+			}
+			res.json(book);
+		});
+	});
 
-// get all books
-app.get('/api/books', function(req, res) {
-// use mongoose to get all books from the db
-Book.find(function(err, books) {
-// if err, send it
-if (err) {
-res.send(err);
+	/*
+	// get all books
+	app.get('/api/books', function(req, res) {
+	// use mongoose to get all books from the db
+	Book.find(function(err, books) {
+	// if err, send it
+	if (err) {
+	res.send(err);
 }
 res.json(books);
 });

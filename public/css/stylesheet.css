@@ -54,6 +54,10 @@ body:after {
   border: 3px solid;
 }
 
+.border-thin {
+  border: 2px solid;
+}
+
 .mediumFont {
   font-size: 150%;
 }
@@ -93,12 +97,12 @@ body:after {
 }
 
 .green {
-  color: green !important;
+  color: #6DC995 !important;
 }
 
 .bg-green {
 
-    background-color: green;
+    background-color: #6DC995;
 }
 
 .space {
@@ -113,8 +117,34 @@ body:after {
   margin-top: 15px;
 }
 
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
 .float-right {
   float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.panel-body img {
+  margin-right: 20px;
+}
+
+#myBooks {
+  margin: 20px 0 0 20px;
+}
+
+#removeButton {
+  position: relative;
+  top: 50px;
+  left: -100px;
+}
+
+.opacity {
+  opacity: 0.8;
 }
 
 * {

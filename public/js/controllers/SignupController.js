@@ -9,7 +9,10 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
   $scope.account = {
     email : '',
     password : '',
-    repeatPassword : ''
+    repeatPassword : '',
+    fullName : '',
+    city : '',
+    state : ''
   }
 
   // at signup button click
@@ -25,7 +28,10 @@ app.controller('SignupController', ['$scope', '$http', '$window', function($scop
     // user obj we are sending to the server
     var user = {
       email : account.email,
-      password : account.password
+      password : account.password,
+      fullName : account.fullName,
+      city : account.city,
+      state : account.state
     };
 
     $http.post("/api/signup", user)

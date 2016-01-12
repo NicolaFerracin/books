@@ -1,7 +1,37 @@
 <div class="row" class="white">
   <div class="col-xs-6 col-xs-offset-3">
     <div class="page-header">
+      <h1 class="white">Add a Book</h1>
+    </div>
+    <h2 class="white">Add a book to your collection using the search feature.</h2>
+    <h3 class="red" ng-show="showAlert">This book is already in your collection</h3>
+    <form>
+      <div class="input-group input-group-lg" align="center" id="search">
+        <input ng-model="searchString" type="text" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit" ng-click="search(searchString)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </span>
+      </div>
+
+    </form>
+    <div class="panel panel-default" id="resultsDisplayer" ng-hide="books.length <= 0">
+      <div class="panel-body" ng-repeat="book in books">
+        <a href="#" ng-click="addBook(book)">
+          <img src="{{book.image}}" class="float-left" />
+          <div id="bookInfo">
+            <p><b>{{book.title}}</b>, by <i>{{book.authors}}</i></p>
+            <p>{{book.publishedDate}}, {{book.publisher}}</p>
+            <p>{{book.subtitle}}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="page-header" ng-hide="myBooks.length <= 0">
       <h1 class="white">My Books</h1>
     </div>
-  </div>
+    <div ng-class="{'opacity' : showOpacity}" ng-mouseover="showOpacity = true" ng-mouseleave="showOpacity = false"  ng-repeat="book in myBooks">
+      <img id="myBooks" src="{{book.image}}" class="border white float-left" />
+      <a ng-click="removeBook($index)" href="#" id="removeButton" class="border-thin red" ng-show="showOpacity">&nbsp;Remove&nbsp;</a>
+    </div>
+  </div>&nbsp;
 </div>

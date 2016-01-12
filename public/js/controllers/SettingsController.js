@@ -3,8 +3,14 @@ app.controller('SettingsController', ['$scope', '$http', function($scope, $http)
 
   $scope.user = JSON.parse(window.localStorage.user);
 
+
   $scope.save = function(field, newValue) {
-    // disable all save buttons
+    console.log('saving')
+    if (newValue == "" || !newValue) {
+      console.log("error, new value is empty or not valid")
+      return;
+    }
+    // disable all save buttons while saving
     $(".btn-succes").prop("disabled", true);
     switch (field) {
       case "name":
@@ -20,7 +26,7 @@ app.controller('SettingsController', ['$scope', '$http', function($scope, $http)
       $scope.showChangeState = false;
       break;
     }
-    // TODO save changes to DB
+    // save changes to database
     $http.post("/api/user/" + $scope.user._id, $scope.user)
     .success(function (data, status) {
       console.log('User updated.');
@@ -30,6 +36,8 @@ app.controller('SettingsController', ['$scope', '$http', function($scope, $http)
     });
     // re-enable all save buttons
     $(".btn-succes").prop("disabled", false);
+    // save new user to localStorage
+    window.localStorage.setItem('user', JSON.stringify($scope.user));
   }
 
 }]);

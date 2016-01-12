@@ -3,28 +3,55 @@
     <div class="page-header">
       <h1 class="white">Settings</h1>
     </div>
-    <div class="white">
-      <p class="bigFont">Full name: <span ng-hide="showChangeName">{{user.fullName}}</span>
-      <a href="#" ng-click="showChangeName = true; showChangeCity = false; showChangeState = false" ng-hide="showChangeName" class="border bg-white black float-right">Change name</a>
-        <form name="changeName" ng-submit="save('name', fullName)" ng-show="showChangeName">
+    <div id="changeName">
+      <div class="col-md-8 white">
+        <p class="mediumFont">Full name: {{user.fullName}}</p>
+      </div>
+      <div class="col-md-4 white mediumFont">
+        <a href="#" ng-click="showChangeName = true; showChangeCity = false; showChangeState = false" ng-hide="showChangeName" class="float-right border-thin">&nbsp;Change name&nbsp;</a>
+      </div>
+      <div class="col-md-12 margin-bottom-20" ng-show="showChangeName">
+        <div class="col-md-10">
           <input type="text" class="form-control" name="fullName" placeholder="New name" ng-model="fullName" required>
-          <a href="#" ng-disabled="changeName.$invalid" class="border green" type="submit">Save</a>
-        </form>
-      </p>
-      <p>City: <span ng-hide="showChangeCity">{{user.city}}</span>
-      <a href="#" ng-click="showChangeCity = true; showChangeName = false; showChangeState = false" ng-hide="showChangeCity" class="border blue float-right">Change city</a>
-        <form name="changeCity" ng-submit="save('city', city)" ng-show="showChangeCity">
+        </div>
+        <div class="col-md-2">
+          <a href="#" ng-click="save('name', fullName)" class="border-thin green mediumFont" type="submit">&nbsp;Save&nbsp;</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="changeCity">
+      <div class="col-md-8 white">
+        <p class="mediumFont">City: {{user.city}}</p>
+      </div>
+      <div class="col-md-4 white mediumFont">
+        <a href="#" ng-click="showChangeCity = true; showChangeName = false; showChangeState = false" ng-hide="showChangeCity" class="float-right border-thin">&nbsp;Change city&nbsp;</a>
+      </div>
+      <div class="col-md-12 margin-bottom-20" ng-show="showChangeCity">
+        <div class="col-md-10">
           <input type="text" class="form-control" name="city" placeholder="New city" ng-model="city" required>
-          <a href="#" ng-disabled="changeCity.$invalid" class="border green" type="submit">Save</a>
-        </form>
-      </p>
-      <p>State: <span ng-hide="showChangeState">{{user.state}}</span>
-      <a href="#" ng-click="showChangeState = true; showChangeName = false; showChangeCity = false" ng-hide="showChangeState" class="border blue float-right">Change state</a>
-        <form name="changeState" ng-submit="save('state', state)" ng-show="showChangeState">
+        </div>
+        <div class="col-md-2">
+          <a href="#" ng-click="save('city', city)" ng-disabled="changeCity.$invalid" class="border-thin green mediumFont">&nbsp;Save&nbsp;</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="changeState">
+      <div class="col-md-8 white">
+        <p class="mediumFont">State: {{user.state}}</p>
+      </div>
+      <div class="col-md-4 white mediumFont">
+        <a href="#" ng-click="showChangeState = true; showChangeName = false; showChangeCity = false" ng-hide="showChangeState" class="float-right border-thin">&nbsp;Change state&nbsp;</a>
+      </div>
+      <div class="col-md-12 margin-bottom-20" ng-show="showChangeState">
+        <div class="col-md-10">
           <input type="text" class="form-control" name="state" placeholder="New state" ng-model="state" required>
-          <a href="#" ng-disabled="changeState.$invalid" class="border green" type="submit">Save</a>
-        </form>
-      </p>
+        </div>
+        <div class="col-md-2">
+          <a href="#" ng-click="save('state', state)" ng-disabled="changeState.$invalid" class="border-thin green mediumFont" type="submit">&nbsp;Save&nbsp;</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
