@@ -2,5 +2,13 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Book', {
-  google_id : String
+  googleId : String,
+  image : String,
+  authors : String,
+  title : String,
+  subtitle : String,
+  publishedDate : String,
+  publisher : String,
+  isCurrentlyTraded : Boolean,
+  owner : String
 });

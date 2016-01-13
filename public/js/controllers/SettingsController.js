@@ -1,10 +1,16 @@
-app.controller('SettingsController', ['$scope', '$http', function($scope, $http) {
+app.controller('SettingsController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
 
   $scope.user = JSON.parse(window.localStorage.user);
 
 
   $scope.save = function(field, newValue) {
+    // if user is logged out, redirect to login page
+    if (typeof $scope.user.local === 'undefined') {
+      $location.path("/login");
+      return;
+    }
+
     console.log('saving')
     if (newValue == "" || !newValue) {
       console.log("error, new value is empty or not valid")

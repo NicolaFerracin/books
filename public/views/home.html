@@ -6,12 +6,12 @@
         <span class="border"><a href="/login">&nbsp;Login </a></span>
         <span>&nbsp;or </span>
         <span class="border"><a href="/signup">&nbsp;Signup </a></span>
-        <span>&nbsp;and browse our 17.123 books NOW!</span>
+        <span>&nbsp;and browse our {{booksAmount}} books NOW!</span>
       </div>
       <div id="loggedInHome" ng-show="user.local.email">
         <div class="bigFont white">
-          <p>Browse through all the books in the database</p>
-          <p>Add books to your account</p>
+          <p>Browse through {{booksAmount}} books</p>
+          <p>Add books to your collection</p>
           <p>Find a book you want to read and request a trade</p>
           <p>Offer your books and accept trades requests</p>
         </div>
@@ -19,8 +19,20 @@
           <a href="#" ng-click="showBooks()"><img height="" width="400" src="img/arrow_down.png" /></a>
         </div>
       </div>
-      <div id="books" class="bigFont white" ng-show="toggleBooks">
-        <p>ajbnvjranjbvnañnmc</p>
+      <div id="books" class="white" ng-show="toggleBooks && user.local.email">
+        <form id="searchForm">
+          <input ng-model="searchString" type="text" class="form-control" placeholder="Search by title in database..." />
+        </form>
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="showMenu && user.local.email != book.owner">&nbsp;Request Trade&nbsp;</a>
+            <a ng-click="acceptTrade(book)" href="#" class="green border-thin" ng-show="showMenu && user.local.email == book.owner">&nbsp;Accept Trade&nbsp;</a>
+            <a ng-click="refuseTrade(book)" href="#" class="red border-thin" ng-show="showMenu && user.local.email == book.owner">&nbsp;Refuse Trade&nbsp;</a>
+            <a ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && user.local.email == book.owner">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
       </div>
     </div>
   </div>

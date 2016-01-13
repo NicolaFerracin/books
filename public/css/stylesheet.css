@@ -84,7 +84,7 @@ body:after {
 
 .bg-red {
 
-    background-color: #DD4747;
+  background-color: #DD4747;
 }
 
 .blue {
@@ -93,7 +93,7 @@ body:after {
 
 .bg-blue {
 
-    background-color: #118DF0;
+  background-color: #118DF0;
 }
 
 .green {
@@ -102,7 +102,7 @@ body:after {
 
 .bg-green {
 
-    background-color: #6DC995;
+  background-color: #6DC995;
 }
 
 .space {
@@ -133,9 +133,6 @@ body:after {
   margin-right: 20px;
 }
 
-#myBooks {
-  margin: 20px 0 0 20px;
-}
 
 #removeButton {
   position: relative;
@@ -149,4 +146,49 @@ body:after {
 
 * {
   border-radius: 0 !important;
+}
+
+.book {
+  display: inline-block;
+  width: 132px;
+  height: auto;
+  position: relative;
+  margin: 0 10px 20px 0;
+}
+
+.book img {
+  border: 2px solid;
+}
+
+.book p {
+  left: 2px;
+  width: 128px;
+  position: absolute;
+  bottom: 10px;
+  text-align: left;
+  padding-left: 10px;
+  background-color: #000;
+}
+
+.buttons {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.buttons a {
+  display:flex;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #000;
+}
+
+.book span {
+  margin-bottom: 20px;
+}
+
+#searchForm {
+  margin-bottom: 20px;
 }

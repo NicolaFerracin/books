@@ -1,56 +1,72 @@
-var Book = require('./models/book');  // load the book mongoose model - change as needed
+var Book = require('./models/book');  // load the book mongoose model
 var User = require('./models/user');  // load the User mongoose model for passport.js authentication
 
 module.exports = function(app, passport) {
-
-
 	// api ---------------------------------------------------------------------
 	// create book
-	app.post('/api/books', function(req, res) {
-		// check if the books exists in DB
-			// update
-		Book.create({
-			// TODO populate the obj
-		}, function(err, book) {
+	app.post('/api/book', function(req, res) {
+		var book = new Book(req.body);
+		book.save(function (err) {
+			if (err) {
+				res.send(err);
+			} else {
+				res.sendStatus(200);
+			}
+		})
+	});
+
+	// get all books
+	app.get('/api/books', function(req, res) {
+		// use mongoose to get all books from the db
+		Book.find(function(err, books) {
+			// if err, send it
 			if (err) {
 				res.send(err);
 			}
-			res.json(book);
+			res.json(books);
 		});
 	});
 
+	// delete a book by googleId AND owner, since there might be more copies of the same book, but only one per owner
+	app.delete('/api/book/:id/:owner', function(req, res) {
+		console.log(req.params.id + req.params.owner)
+		Book.remove({
+			googleId : req.params.id,
+			owner : req.params.owner
+		}, function(err, book) {
+			if (err) {
+				res.send(err);
+			} else {
+				res.send();
+			}
+		});
+	});
+
+
+	// get books by owner
+	app.get('/api/books/:owner', function(req, res) {
+		// use mongoose to get all the books using a paramater
+		// Populate the search obj with the needed parameter
+		Book.find({ owner : req.params.owner}, function(err, books) {
+			// if err, send it
+			if (err) {
+				res.send(err);
+			} else if (!books) {
+				res.send("No books found");
+			} else {
+				res.json(books);
+			}
+		});
+	});
+
+
 	/*
-	// get all books
-	app.get('/api/books', function(req, res) {
-	// use mongoose to get all books from the db
-	Book.find(function(err, books) {
-	// if err, send it
-	if (err) {
+	// get book by id
+	app.get('/api/book/:id', function(req, res) {
+	// use mongoose to find the book by id requested
+	Book.findById(req.params.id, function(err, book) {
+	if(err) {
 	res.send(err);
-}
-res.json(books);
-});
-});
-
-// get book by parameter
-app.get('/api/books/:parameter', function(req, res) {
-// use mongoose to get all the books using a paramater
-// TODO Populate the search obj with the needed parameter
-Book.find({}, function(err, books) {
-// if err, send it
-if (err) {
-res.send(err);
-}
-res.json(books);
-});
-});
-
-// get book by id
-app.get('/api/book/:id', function(req, res) {
-// use mongoose to find the book by id requested
-Book.findById(req.params.id, function(err, book) {
-if(err) {
-res.send(err);
 }
 res.json(book);
 });
@@ -70,19 +86,6 @@ res.send(err);
 }
 res.json(book);
 });
-});
-});
-
-// delete a book by id
-app.delete('/api/books/:id', function(req, res) {
-Book.remove({
-_id : req.params.id
-},
-function(err, book) {
-if (err) {
-res.send(err);
-}
-res.send();
 });
 });
 */
