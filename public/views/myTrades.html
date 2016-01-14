@@ -1,0 +1,47 @@
+<div class="row" class="white">
+  <div class="col-xs-6 col-xs-offset-3 white">
+    <div class="header">
+      <h1 class="bigFont white">Trades</h1>
+    </div>
+
+    <div class="page-header">
+      <h1 class="white">To Accept</h1>
+    </div>
+
+    <div ng-repeat="trade in tradesToAccept" class="row mediumFont">
+      <div class="col-md-8">
+        <p>{{trade.book.title}} - requested by {{trade.requestedBy}}</p>
+      </div>
+      <div class="col-md-4">
+        <a href="#" ng-click="acceptTrade(trade)" class="green border-thin">&nbsp;ACCEPT&nbsp;</a>
+        <a href="#" ng-click="deleteTrade(trade)" class="red border-thin">&nbsp;DELETE&nbsp;</a>
+      </div>
+    </div>
+
+    <div class="page-header" class="row mediumFont">
+      <h1 class="white">Requested</h1>
+    </div>
+    <div ng-repeat="trade in tradesRequested" class="row mediumFont">
+      <div class="col-md-10">
+        <p>{{trade.book.title}} - requested to {{trade.requestedTo}}</p>
+      </div>
+      <div class="col-md-2">
+        <a href="#" ng-click="deleteTrade(trade)" class="red border-thin">&nbsp;DELETE&nbsp;</a>
+      </div>
+    </div>
+
+    <div class="page-header">
+      <h1 class="white">Accepted</h1>
+    </div>
+    <div ng-repeat="trade in tradesAccepted" class="row mediumFont">
+      <div class="col-md-10">
+        <p ng-show="trade.requestedBy != userEmail">{{trade.book.title}} - requested by {{trade.requestedBy}}</p>
+        <p ng-show="trade.requestedBy == userEmail">{{trade.book.title}} - requested by you</p>
+      </div>
+      <div class="col-md-2">
+        <p ng-show="trade.accepted" class="green float-right">&nbsp;ACCEPTED&nbsp;</p>
+      </div>
+    </div>
+
+  </div>
+</div>

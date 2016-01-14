@@ -35,14 +35,15 @@
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
 					<li><a class="border white mediumFont" href="/">Home</a></li>
-					<li class="ng-hide" ng-show="user.local.email"><a class="border white mediumFont" href="myBooks">My Books</a></li>
+					<li class="ng-hide" ng-show="userLoggedIn"><a class="border white mediumFont" href="myBooks">My Books</a></li>
+					<li class="ng-hide" ng-show="userLoggedIn"><a class="border white mediumFont" href="myTrades">My Trades</a></li>
 				</ul>
 				<!-- right navbar login and signup and logout -->
-				<ul class="nav navbar-nav navbar-right navbar-btn " ng-hide="user.local.email">
+				<ul class="nav navbar-nav navbar-right navbar-btn " ng-hide="userLoggedIn">
 					<li><a href="/login" class="border blue mediumFont">Login</a></li>
 					<li><a href="/signup" class="border white mediumFont">Sign Up</a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right navbar-btn ng-show" ng-show="user.local.email">
+				<ul class="nav navbar-nav navbar-right navbar-btn ng-show" ng-show="userLoggedIn">
 					<li><a href="settings" class="border white mediumFont">Settings</a></li>
 					<li><a ng-click="logout()" class="border red mediumFont" href="#">Logout</a></li>
 				</ul>
@@ -70,6 +71,7 @@
 <script src="js/controllers/IndexController.js"></script>
 <script src="js/controllers/SettingsController.js"></script>
 <script src="js/controllers/MyBooksController.js"></script>
+<script src="js/controllers/MyTradesController.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-// thing mongoose model - needs to be populated or removed
+// book mongoose model
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Book', {
@@ -9,6 +9,5 @@ module.exports = mongoose.model('Book', {
   subtitle : String,
   publishedDate : String,
   publisher : String,
-  isCurrentlyTraded : Boolean,
   owner : String
 });

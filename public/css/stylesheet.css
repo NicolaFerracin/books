@@ -109,10 +109,6 @@ body:after {
   margin-left: 100px;
 }
 
-#loggedInHome {
-  margin-bottom: 50px;
-}
-
 .margin-top-15 {
   margin-top: 15px;
 }
@@ -133,6 +129,9 @@ body:after {
   margin-right: 20px;
 }
 
+#loggedOutHome {
+  margin-bottom: 50px;
+}
 
 #removeButton {
   position: relative;

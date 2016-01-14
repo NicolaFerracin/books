@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+app.controller('LoginController', function($scope, $http, $window) {
 
   // booleans to show/hide alerts
   $scope.submitted = false;
@@ -35,4 +35,4 @@ app.controller('LoginController', ['$scope', '$http', '$window', function($scope
       $scope.errorAlert = data[0];
     });
   };
-}]);
+});
