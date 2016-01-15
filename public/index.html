@@ -38,14 +38,17 @@
 					<li class="ng-hide" ng-show="userLoggedIn"><a class="border white mediumFont" href="myBooks">My Books</a></li>
 					<li class="ng-hide" ng-show="userLoggedIn"><a class="border white mediumFont" href="myTrades">My Trades</a></li>
 				</ul>
+
 				<!-- right navbar login and signup and logout -->
 				<ul class="nav navbar-nav navbar-right navbar-btn " ng-hide="userLoggedIn">
 					<li><a href="/login" class="border blue mediumFont">Login</a></li>
 					<li><a href="/signup" class="border white mediumFont">Sign Up</a></li>
+					<li><a class="border white mediumFont" href="about">About</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right navbar-btn ng-show" ng-show="userLoggedIn">
 					<li><a href="settings" class="border white mediumFont">Settings</a></li>
 					<li><a ng-click="logout()" class="border red mediumFont" href="#">Logout</a></li>
+					<li><a class="border white mediumFont" href="about">About</a></li>
 				</ul>
 			</ul>
 		</div><!-- /.navbar-collapse -->
@@ -53,13 +56,6 @@
 </nav>
 
 <div ng-view class="view"></div>
-
-<!-- footer -->
-<div class="navbar navbar-default navbar-fixed-bottom nav-center">
-	<div class="container nav nav-center">
-		<p class="white footer navbar-text nav nav-center">©2015 - Books is built by Nicola Ferracin</p>
-	</div>
-</div>
 
 <!-- Modules -->
 <script src="js/app.js"></script>

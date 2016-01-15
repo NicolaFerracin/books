@@ -44,6 +44,9 @@ app.config(function ($routeProvider, $locationProvider) {
     controller: 'MyTradesController',
     templateUrl: 'views/myTrades.html'
   })
+  .when('/about', {
+    templateUrl: 'views/about.html'
+  })
   .otherwise({
     controller: 'HomeController',
     templateUrl: 'views/home.html'

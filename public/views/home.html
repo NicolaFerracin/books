@@ -24,6 +24,62 @@
           </div>
           <p class="book-title white">{{book.title}}</p>
         </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        <div class="book" ng-mouseover="showMenu = true" ng-mouseleave="showMenu = false"  ng-repeat="book in books | filter:searchString">
+          <img ng-class="{'opacity' : showMenu}" src="{{book.image}}" class="white float-left" />
+          <div class="buttons">
+            <a id="requestTradeLink" ng-click="requestTrade(book)" href="#" class="blue border-thin" ng-show="!book.isRequested && showMenu && userEmail != book.owner && userLoggedIn">&nbsp;Request Trade&nbsp;</a>
+            <a id="removeBookLink" ng-click="removeBook(book)" href="#" class="white border-thin" ng-show="showMenu && userEmail == book.owner && userLoggedIn">&nbsp;Remove&nbsp;</a>
+          </div>
+          <p class="book-title white">{{book.title}}</p>
+        </div>
+
+        
       </div>
     </div>
   </div>
