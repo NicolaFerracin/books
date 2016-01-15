@@ -1,18 +1,16 @@
 app.controller('MyBooksController', function($scope, $http, loggedIn, $location) {
 
 
-  const GOOGLE_API_KEY = "&key=AIzaSyDlf7ANED9sDitd3yVL71yH5HQ4uMxsqQo";
+  const GOOGLE_API_KEY = "&key=AIzaSyCtk8QlCCNZ9Wf7d88OEBqiCLOiY6SeuVg";
   const URL_START = "https://www.googleapis.com/books/v1/volumes?q=";
   $scope.books = [];
   $scope.myBooks = [];
 
-
-
-
-  // alhorithm
+/*
+  // alhorithm to produce random books
   var letters = ["a", "b", "c", "d", "e", "f", "g", "i"];
   var search = [];
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 10; i++) {
     var word = "";
     for (var x = 0; x < 5; x++) {
       word += (letters[Math.floor(Math.random() * 8)]);
@@ -42,12 +40,7 @@ app.controller('MyBooksController', function($scope, $http, loggedIn, $location)
       console.log("An error occured: " + err);
     })
   }
-
-
-
-
-
-
+  */
 
   // check if user logged in
   loggedIn.getUser().then(
@@ -150,7 +143,6 @@ app.controller('MyBooksController', function($scope, $http, loggedIn, $location)
               .error(function(err) {
                 console.log("An error occured: " + err);
               })
-              // TODO what about the requests?
             } else {
               // if userEmail == false, redirects to login
               $location.path("/login");
