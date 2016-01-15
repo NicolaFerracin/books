@@ -6,11 +6,11 @@ app.controller('MyBooksController', function($scope, $http, loggedIn, $location)
   $scope.books = [];
   $scope.myBooks = [];
 
-/*
   // alhorithm to produce random books
+  /*
   var letters = ["a", "b", "c", "d", "e", "f", "g", "i"];
   var search = [];
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 800; i++) {
     var word = "";
     for (var x = 0; x < 5; x++) {
       word += (letters[Math.floor(Math.random() * 8)]);
