@@ -1,7 +1,7 @@
 <div class="row" class="white">
   <div class="col-md-4 col-md-offset-4">
-    <div class="page-header">
-      <h1 class="white">Sign Up</h1>
+    <div class="header">
+      <h1 class="bigFont white">Sign Up</h1>
     </div>
     <form name="signupForm" ng-submit="signup(account)">
       <div class="form-group white">
@@ -39,8 +39,8 @@
       <span ng-show="showErrorAlert" class="red mediumFont">
         <p>Uh oh, it looks like this email is already taken. Try with a different one or <a href="/login">Login here</a>!</p>
       </span>
-      <div>
-        <a href="#" ng-disabled="signupForm.$invalid || submitted" ng-click="signup(account)" class="border green bigFont">&nbsp;SIGNUP&nbsp;</a>
+      <div class="margin-top-30">
+        <a href="#" ng-disabled="signupForm.$invalid || submitted" ng-click="signup(account)" class="border white mediumFont padding-15">&nbsp;Signup&nbsp;</a>
       </div>
     </form>
     <div class="margin-top-15 white">

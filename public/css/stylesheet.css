@@ -100,6 +100,10 @@ body:after {
   color: #6DC995 !important;
 }
 
+.padding-15 {
+  padding: 15px 15px 15px 15px;
+}
+
 .bg-green {
 
   background-color: #6DC995;
@@ -112,6 +116,11 @@ body:after {
 .margin-top-15 {
   margin-top: 15px;
 }
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
 
 .margin-bottom-20 {
   margin-bottom: 20px;
